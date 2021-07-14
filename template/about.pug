@@ -1,0 +1,133 @@
+extends template-part/layout.pug
+
+mixin member(member) 
+    .member.d-flex.a-center
+        .img
+            img(src=member.src, alt='')
+            .contact.d-flex
+                a(href='#') 
+                    i.fab.fa-facebook-f
+                a(href='#') 
+                    i.fab.fa-twitter
+                a(href='#') 
+                    i.fab.fa-instagram
+        a.name(href='#')=member.name 
+        .role
+            | Instructor
+
+block head 
+    title about
+
+block style 
+    link(rel="stylesheet", href="./scss/about.css")
+
+block nav 
+    li
+        a(href='index.html') Home
+
+    li
+        a.active(href='about.html') About
+
+    li
+        a.page-active
+            | Pages 
+            i.fas.fa-angle-down
+        
+        ul.second-nav
+            li
+                a(href='blog.html') Blog Posts
+            li
+                a(href='404Page.html') 404 Pages
+            li
+                a(href='#') Landing page
+    li
+        a(href='contact.html') Contact
+
+
+block content 
+
+    .main-content 
+        - const bg = {"background-image": "url('./img/bt1/banner3.jpg')"};
+        .banner(style=bg)
+            .container 
+                .banner-content 
+                    a(href="index.html").active
+                        | Home 
+                    span »
+                    | About
+        .top
+            .about-Us.p-100
+                .container
+                    .d-flex.j-between
+                        .img
+                            img(src='./img/bt1/ab1.jpg', alt='')
+                        .contents
+                            .heading
+                                p About Us
+                                h2 Learn at Your Own Place
+                            .content
+                                | Lorem ipsum dolor sit amet,Ea consequuntur illum
+                                | facere aperiam sequi optio consectetur adipisicing.
+                                | Nunc id ipsum fringilla, gravida felis vitae. lacinia
+                                | id, sunt in culpa quis lacinia. Lorem ipsum dolor, sit
+                                | amet init elit. Eos, debitis. Quas minima sunt natus tempore.
+                            a.btn.btn-basic(href='#')
+                                | Read More 
+                                i.fas.fa-chevron-right
+            .about-Us.p-100.resons
+                .container
+                    .d-flex.j-between
+                        .contents
+                            .heading
+                                p Why Choose Us
+                                h2 Educating Champions of a Just and Sustainable World.
+                            .content.d-flex.j-between
+                        .img
+                            img(src='./img/bt1/ab4.jpg', alt='')
+            .about-Us.p-100.ourSkill
+                .container
+                    .d-flex.j-between
+                        .img
+                            img(src='./img/bt1/ab5.jpg', alt='')
+                        .contents
+                            .heading
+                                p Our Skills
+                                h2 Enhance your skills with best Online courses
+                            p.description
+                                | Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet elit.
+                            .skills-bar
+                                .skill
+                                    h3.progress-info Finance
+                                    .progress(data-percent='80')
+                                        span
+                                .skill
+                                    h3.progress-info Marketing
+                                    .progress(data-percent='90')
+                                        span
+                                .skill
+                                    h3.progress-info Business
+                                    .progress(data-percent='60')
+                                        span
+
+        .banner.banner-2
+            .container
+                .content.d-flex.j-between.a-center
+                    h2 The greatest choice of courses
+                    a.btn.btn-basic(href='btn btn-basic')
+                        | Join Now 
+                        i.fas.fa-chevron-right   
+
+        .ourTeam.p-100
+            .container
+                .heading
+                    p Our Team
+                    h2 Popular Instructors
+                .members.d-flex.a-center.j-between
+                    +member({src:'./img/bt1/team1.jpg', name:'Daniel jacobs'})
+                    +member({src:'./img/bt1/team3.jpg', name:'Claire Daniel'})
+                    +member({src:'./img/bt1/team2.jpg', name:'Daniel Hunt'})
+                    +member({src:'./img/bt1/team4.jpg', name:'Kelli Grant'})
+                    +member({src:'./img/bt1/team5.jpg', name:'Jack Harry'})
+                    +member({src:'./img/bt1/team6.jpg', name:'ELizabeth ker'})
+                    +member({src:'./img/bt1/team1.jpg', name:'Daniel Harry'})
+                    +member({src:'./img/bt1/team3.jpg', name:'Harry Daniel'})

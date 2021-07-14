@@ -1,0 +1,147 @@
+@import 'color';
+@import 'layout';
+@import 'general';
+
+
+.main-content {
+
+    .container {
+
+        .form-contact {
+            margin: 0 -10px;
+
+            @include breakpoint (mobile) {
+                flex-wrap: wrap;
+
+                .item {
+                    width: 100%;
+                }
+            }
+
+            @include breakpoint (laptop) {
+                flex-wrap: nowrap;
+                .item {
+                    width: 50%;
+                }
+            }
+
+            .item {
+                margin: 0 10px;
+            }
+
+            .content {
+                margin: 40px 0;
+                color: $font-color;
+                line-height: 28px;
+                word-spacing: 1.2px;
+            }
+
+            .left {
+                max-width: 500px;
+                .content {
+                    font-size: 18px;
+                }
+
+                .contact-eles {
+                    margin-top: 20px;
+                    .ele {
+                        margin-top: 30px;
+                        .icon {
+                            width: 40px;
+                            height: 40px;
+                            background-color: $primary-color;
+                            color: $white-color;
+                            justify-content: center;
+                            border-radius: 50%;
+                        }
+
+                        .contact-uss {
+                            margin-left: 20px;
+                            padding-right: 100px;
+
+                            p {
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: $font-color;
+                            }
+                            a {
+                                font-size: 18px;
+                                color: $font-color;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+            .right {
+                max-width: 600px;
+                @include breakpoint (mobile) {
+                    margin-top: 60px;
+                }
+
+                @include breakpoint (laptop) {
+                    margin-top: 0px;
+                }
+                .form-contacts {
+                    .input-group {
+                        input,textarea {
+                            background-color: $grey-color;
+                            font-size: 18px;
+                            padding: 12px 20px;
+                            line-height: 28px;
+                            height: 58px;
+                            border-radius: 8px;
+                            margin-bottom: 20px;
+                            width: 100%;
+                            &:first-child {
+                                margin-right: 20px;
+                            }
+                            &:focus {
+                                border: 1px solid $primary-color;
+                            }
+                        }
+
+                        textarea {
+                            resize: none;
+                            min-height: 140px;
+                        }
+
+                        &.d-flex {
+                            input {
+                                flex-grow: 1;
+                            }
+                        }
+                    }
+                    .submit {
+                        text-align: right;
+                        .btn {
+                            background: $primary-color;
+                            color: $white-color;
+                            font-size: 18px;
+                            transition: all .4s;
+                            &:hover {
+                                background: $second-color;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        .map {
+            margin-top: 100px;
+            iframe {
+                border-radius: 6px;
+                border:10px solid $grey-color;
+            }
+        }
+
+    }
+
+}

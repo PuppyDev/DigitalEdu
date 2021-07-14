@@ -1,0 +1,194 @@
+
+@import 'breakpoint';
+
+body ,html {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.btn {
+    padding: 15px 35px;
+    background : $white-color;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    
+    &-primary {
+        color:  $white-color;
+        background-color: $primary-color;
+        transition: all .6s;
+    
+        &:hover {
+            background-color: #3d348b;
+            border-color: #3d348b;
+        }
+    }
+
+}
+
+.backToTop {
+    width: 50px;
+    height: 50px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    z-index: 99;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include breakpoint (mobile) {
+        padding: 0 20px !important;
+        width: 100%;       
+    }
+
+    @include breakpoint(smallscreen) {
+
+        padding: 0 20px !important; 
+        max-width:540px;
+
+    }
+
+    @include breakpoint(tablet) {
+
+        padding: 0 20px !important; 
+        max-width: 720px;
+
+    }
+
+    @include breakpoint(laptop) {
+
+        padding-right: 20px;
+        padding-left: 20px;
+        max-width: 960px;
+
+    }
+
+    @include breakpoint(desktop) {
+
+        max-width: 1140px;
+        
+    }           
+
+    @include breakpoint(large-desktop) {
+        max-width: 1200px;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.p-100 {
+    @include breakpoint(mobile) {
+        padding: 50px 0;
+    }
+    
+    @include breakpoint(tablet) {
+        padding: 100px 0;   
+    }
+}
+
+.heading {
+    overflow: hidden;
+    
+    p {
+        margin-left: 70px;
+        font-size: 18px;
+        color: $primary-color;
+        position: relative;
+        display: inline;
+        overflow: hidden;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: $primary-color;
+            top:50%;
+            left: -80px;
+        }
+    }
+    
+    h2 {
+        font-size: 40px;
+        color: $heding-color;
+        font-weight: bold;
+        @include breakpoint (mobile) {
+
+            font-size: 26px;
+    
+        }
+    
+        @include breakpoint (smallscreen) {
+            
+            font-size: 35px;
+            
+        }
+    
+        @include breakpoint (tablet) {
+    
+            font-size: 40px;
+            
+        }
+    
+        @include breakpoint (laptop) {
+            font-size: 45px;
+        }
+    }
+}
+
+.banner {
+    min-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+
+    &::after {
+        z-index: 2;
+        position: absolute;
+        top:0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000000,0.7);
+    }
+    &-content {
+        position: absolute;
+        top: 60%;
+        z-index: 3;
+        font-size: 18px;
+        a {
+            transition: all .4s;
+            color: $primary-color;
+            &:hover {
+                color: green;
+            }
+        }
+        span {
+            margin: 0 5px;
+        }
+    }
+}
+

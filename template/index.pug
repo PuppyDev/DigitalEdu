@@ -1,0 +1,323 @@
+extends template-part/layout
+
+mixin itemGood(itemData)
+    .item.d-flex.a-center
+        .logo
+            i(class = itemData.icon)
+        .amount.count(data-target=itemData.data) 0
+        .description= itemData.des
+        
+block nav 
+    li
+        a.active(href='index.html') Home
+
+    li
+        a(href='about.html') About
+
+    li
+        a.page-active
+            | Pages 
+            i.fas.fa-angle-down
+        
+        ul.second-nav
+            li
+                a(href='blog.html') Blog Posts
+            li
+                a(href='404Page.html') 404 Pages
+            li
+                a(href='#') Landing page
+    li
+        a(href='contact.html') Contact
+
+block content 
+    section.slider
+        #slider1.owl-carousel
+            .item
+                .big-banner(style="background-image: url('./img/bt1/banner1.jpg');")
+                    .container
+                        .content
+                            h2 A Great Place for Learning
+                            p
+                                | Choose from over 100,000 online video courses with new
+                                | additions published every month
+            .item
+                .big-banner(style="background-image: url('./img/bt1/banner2.jpg');")
+                    .container
+                        .content
+                            h2 Learning to love , Loving to Learn
+                            p
+                                | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus tempora odit voluptate ea, culpa minus atque dolor dolore quas mollitia blanditiis tenetur, fugit nihil ipsam cum asperiores alias. Nam, exercitationem.
+            .item
+                .big-banner(style="background-image: url('./img/bt1/banner3.jpg');")
+                    .container
+                        .content
+                            h2 A Great Place for Learning
+                            p
+                                | Choose from over 100,000 online video courses with new
+                                | additions published every month
+            .item
+                .big-banner(style="background-image: url('./img/bt1/banner4.jpg');")
+                    .container
+                        .content
+                            h2 Learning to love , Loving to Learn
+                            p
+                                | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                | Velit quisquam, doloremque placeat aut numquam ipsam.
+
+        .second-content
+            .items.d-flex.j-between
+                .item.d-flex
+                    .logo
+                        i.fas.fa-laptop
+                    .content
+                        .heading
+                            | 100,000 Online Courses 
+                            br
+                            span Focus is having the unwavering attention.
+                .item.d-flex
+                    .logo
+                        i.fas.fa-users
+                    .content
+                        .heading
+                            | Lifetime Entrance 
+                            br
+                            span New skills online the best way is to develop and follow.
+                .item.d-flex
+                    .logo
+                        i.fas.fa-book
+                    .content
+                        .heading
+                            | Live Learning 
+                            br
+                            span Start with your goals in mind and then work.
+
+    section.Main-Content
+        section.about_us.p-100
+            .container
+                .main-about.d-flex.j-between
+                    .content.heading
+                        p About Us
+                        h2 Learn at Your Own Place
+                    .content
+                        span
+                            | Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at tempufddfel. 
+                            | Lorem ipsum dolor sit amet elit. Non quae, fugiat nihil ad. Lorem ipsum dolor sit amet. Lorem ipsum init
+                            | dolor sit, amet elit. Dolor ipsum non velit.
+                    .content
+                        span
+                            | Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at tempufddfel. 
+                            | Lorem ipsum dolor sit amet elit. Non quae, fugiat nihil ad. Lorem ipsum dolor sit amet. Lorem ipsum init
+                            | dolor sit, amet elit. Dolor ipsum non velit.
+
+
+        section.sevice.p-100
+            .container
+                .items.d-flex.j-between
+                    .item.d-flex
+                        .logo
+                            .struct
+                                i.fas.fa-video
+                        .description
+                            .heading
+                                | Become a instructor on DigitalEdu
+                            .content
+                                | Lorem ipsum viverra feugiat. Pellen tesque libero ut
+                                | justo, ultrices in ligula. Semper at tempufddfel.
+                                | Lorem ipsum dolor sit amet.
+                            a.btn.btn-primary.d-flex.a-center(href='#')
+                                | Start today 
+                                i.fas.fa-angle-right
+                    .item.d-flex
+                        .logo
+                            .struct
+                                i.fas.fa-tasks
+                        .description
+                            .heading
+                                | DigitalEdu for business & Community
+                            .content
+                                | Lorem ipsum viverra feugiat. Pellen tesque libero ut
+                                | justo, ultrices in ligula. Semper at tempufddfel.
+                                | Lorem ipsum dolor sit amet.
+                            a.btn.btn-primary.d-flex.a-center(href='#')
+                                | Start today 
+                                i.fas.fa-angle-right
+
+        section.education.p-100
+            .container.d-flex
+                .main-education
+                    h2.heading
+                        | Educating Champions of a Just and Sustainable World.
+                    .button-group.d-flex
+                        a.btn.btn-primary(href='#')
+                            | Read More 
+                            i.fas.fa-angle-right
+                        a.btn(href='#')
+                            | Contact Us 
+                            i.fas.fa-angle-right                        
+      
+        .somethingGood
+            .container
+                .list-items.d-flex.j-between
+                    +itemGood({icon : "far fa-clone" , data : "15100" , des : "Successfully Trained"})
+                    +itemGood({icon : "fas fa-video" , data : "19256" , des : "We Proudly Received"})
+                    +itemGood({icon : "far fa-smile" , data : "12100" , des : "Getting Featured On"})
+                    +itemGood({icon : "fas fa-users" , data : "2560" , des : "Firmly Eastablished"})
+        
+        .main-vid
+            .container
+                .main-video
+        
+        .blog.p-100
+            .container
+                .heading
+                    p Latest Posts
+                    h2 Our Blog Posts
+                .cards.d-flex.j-between
+                    .card
+                        .img
+                            img(src='./img/bt1/ab.jpg', alt='')
+                        .description-card
+                            a.card-header(href='#')
+                                | Hello world!
+                            .contact.d-flex
+                                .img
+                                    img(src='./img/bt1/w3.jpeg', alt='')
+                                .right
+                                    p W3Layouts
+                                    .time
+                                        | May 10, 2021 .  
+                                        i.far.fa-clock
+                                        |  12:34 pm
+                    .card
+                        .img
+                            img(src='./img/bt1/ab1.jpg', alt='')
+                        .description-card
+                            a.card-header(href='#')
+                                | Using Creative Problem Solving lorem ipsum
+                            .contact.d-flex
+                                .img
+                                    img(src='./img/bt1/w3.jpeg', alt='')
+                                .right
+                                    p W3Layouts
+                                    .time
+                                        | May 10, 2021 .  
+                                        i.far.fa-clock
+                                        |  12:20 pm
+                    .card
+                        .img
+                            img(src='./img/bt1/ab2.jpg', alt='')
+                        .description-card
+                            a.card-header(href='#')
+                                | Learn by doing with Real World Projects
+                            .contact.d-flex
+                                .img
+                                    img(src='./img/bt1/w3.jpeg', alt='')
+                                .right
+                                    p W3Layouts
+                                    .time
+                                        | May 10, 2021 .  
+                                        i.far.fa-clock
+                                        |  12:19 pm
+
+        .subcribe.p-100
+            .container
+                .heading
+                    p Subscribe to our Newsletter
+                    h2 Join our Community of Students
+                .form-validator.d-flex.a-center
+                    input(type='text', placeholder='Name')
+                    input(type='text', placeholder='Email')
+                    a.btn.btn-basic(href='#') Subcribe
+
+        .evaluate.p-100
+            .container
+                .heading
+                    p Testimonials
+                    h2 What People Say
+                .slider-2
+                    #slider2.owl-carousel.owl-theme.owl-loaded
+                        .item
+                            .main-item
+                                .content-item
+                                    | &quot;Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                    | laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                    | facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                    | voluptate rem ullam dolore nisi est quasi, doloribus tempora.&quot;
+                            .person.d-flex.a-center
+                                .img
+                                    img(src='../img/bt1/team1.jpg', alt='')
+                                .content
+                                    span Gloria Parker
+                                    p.role
+                                        | Student
+                        .item
+                            .main-item
+                                .content-item
+                                    | &quot;Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                    | laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                    | facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                    | voluptate rem ullam dolore nisi est quasi, doloribus tempora.&quot;
+                            .person.d-flex.a-center
+                                .img
+                                    img(src='../img/bt1/team2.jpg', alt='')
+                                .content
+                                    span Tommy Sakura
+                                    .role
+                                        | Student
+                        .item
+                            .main-item
+                                .content-item
+                                    | &quot;Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                    | laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                    | facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                    | voluptate rem ullam dolore nisi est quasi, doloribus tempora.&quot;
+                            .person.d-flex.a-center
+                                .img
+                                    img(src='../img/bt1/team3.jpg', alt='')
+                                .content
+                                    span Bruce Bailey
+                                    .role
+                                        | Student
+                        .item
+                            .main-item
+                                .content-item
+                                    | &quot;Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                    | laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                    | facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                    | voluptate rem ullam dolore nisi est quasi, doloribus tempora.&quot;
+                            .person.d-flex.a-center
+                                .img
+                                    img(src='../img/bt1/team4.jpg', alt='')
+                                .content
+                                    span Ruth Edwards
+                                    .role
+                                        | Student
+                        .item
+                            .main-item
+                                .content-item
+                                    | &quot;Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                    | laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                    | facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                    | voluptate rem ullam dolore nisi est quasi, doloribus tempora.&quot;
+                            .person.d-flex.a-center
+                                .img
+                                    img(src='../img/bt1/team5.jpg', alt='')
+                                .content
+                                    span Jack Harry
+                                    .role
+                                        | Student
+                        .item
+                            .main-item
+                                .content-item
+                                    | &quot;Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                    | laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                    | facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                    | voluptate rem ullam dolore nisi est quasi, doloribus tempora.&quot;
+                            .person.d-flex.a-center
+                                .img
+                                    img(src='../img/bt1/team6.jpg', alt='')
+                                .content
+                                    span ELizabeth ker
+                                    .role
+                                        | Student
+

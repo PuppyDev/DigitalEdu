@@ -1,0 +1,6 @@
+$rounded-corners: true;
+
+.button {
+  border: 1px solid black;
+  border-radius: if($rounded-corners, 5px, null);
+}

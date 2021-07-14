@@ -1,0 +1,86 @@
+extends template-part/layout
+
+block head 
+    title Contact 
+
+block style 
+    link(rel="stylesheet", href="./scss/contact.css")
+
+block nav 
+    li
+        a(href='index.html') Home
+
+    li
+        a(href='about.html') About
+
+    li
+        a.page-active
+            | Pages 
+            i.fas.fa-angle-down
+        
+        ul.second-nav
+            li
+                a(href='blog.html') Blog Posts
+            li
+                a(href='404Page.html') 404 Pages
+            li
+                a(href='#') Landing page
+    li
+        a.active(href='contact.html') Contact
+
+block content 
+    .main-content
+        nav.banner(style='background-image: url(./img/bt1/banner3.jpg);')
+            .container
+                .banner-content
+                    a.active(href='index.html') Home
+                    span &raquo;
+                    |  Contact Page 
+        .main-content.p-100
+            .container
+                .form-contact.d-flex.j-between
+                    .left.item
+                        .heading
+                            p Find Us
+                            h2 Additional information
+                        .content
+                            | Start working with Us that can provide everything you need to generate awareness, drive traffic, connect.
+                            br
+                            | We guarantee that you&rsquo;ll be able to have any issue resolved within 24 hours.
+                        .contact-eles
+                            .ele.d-flex
+                                .icon.d-flex.a-center
+                                    i.fas.fa-phone-alt
+                                .contact-uss
+                                    p Phone number
+                                    a(href='phone') +(84) 0911 336 236
+                            .ele.d-flex
+                                .icon.d-flex.a-center
+                                    i.far.fa-envelope
+                                .contact-uss
+                                    p Send Email
+                                    a(href='mail') baodakmil123@gmail.com
+                            .ele.d-flex
+                                .icon.d-flex.a-center
+                                    i.fa.fa-map-marker
+                                .contact-uss
+                                    p Office Address
+                                    a(href='phone') Address here, 434 Trainer Honey street, London, UK - 62617.
+                    .right.item
+                        .heading
+                            p Contact Us
+                            h2 Fill out the form.
+                        .content
+                            | Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur adipisicing.
+                        form.form-contacts(action='')
+                            .input-group.d-flex.a-center.j-between
+                                input(type='text' placeholder='Name')
+                                input(type='text' placeholder='Email')
+                            .input-group
+                                input(type='text' placeholder='Subject')
+                            .input-group
+                                textarea(name='' id='' cols='30' rows='10' placeholder='Message')
+                            .submit
+                                a.btn.btn-basic(href='submit') Send Message
+                .map
+                    iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d635432.7245980062!2d-0.101599!3d51.528642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2spl!4v1625536011924!5m2!1sen!2spl' width='100%' height='400' allowfullscreen='true' loading='lazy')

@@ -1,0 +1,833 @@
+@import 'color';
+@import 'layout';
+@import 'general';
+
+.slider {
+    position: relative;
+    .owl-carousel {
+        position: relative;
+        .item {
+            .big-banner {
+                height: 100vh;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                .container {
+                    .content {
+                        padding-right: 50px;
+                        position: absolute;
+                        max-width: 650px;
+                        color: white;
+                        z-index: 2;
+                        top:50%;
+                        transform: translateY(-40%);
+                        h2 {
+                            
+                            font-size: 40px;
+                            
+                            @include breakpoint (tablet) {
+                                font-size: 50px;
+                            }
+                            
+                            @include breakpoint (laptop) {
+                                
+                                font-size: 56px;
+
+                            }
+                        }
+                        p {
+                            
+                            margin: 20px 0;
+                            font-size: 16px;
+                            @include breakpoint (laptop) {
+                                
+                                font-size: 18px;
+
+                            }
+                        }
+                    }
+                }
+                &::before {
+                    z-index: 1;
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(#000000,0.6);
+                }
+            }
+        }
+        .owl-nav {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-100%);
+            color: white;
+            padding: 0 10px;
+            .owl-prev {
+                width: 50px;
+                background-color: rgba(255, 255, 255, 0.21);
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    transform: translateY(-3px);
+                }
+                &:hover {
+                    background-color: #ffffff;
+                    color: #f35b04;
+                }
+            }
+
+            .owl-next {
+                height: 50px;
+                width: 50px;
+                background-color: rgba(255, 255, 255, 0.21);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    transform: translateY(-3px);
+                }
+                &:hover {
+                    background-color: #ffffff;
+                    color: #f35b04;
+                }
+            }
+        }
+        .owl-dots {
+            display: none;
+        }
+    }
+
+    .second-content {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        z-index: 2;
+        margin-bottom: 40px;
+        display: none;
+        
+        @include breakpoint(laptop) {
+            display: block;
+        }
+
+        .items {
+            max-width: 1400px;
+            margin: 0 auto;
+            font-weight: 500;
+            .item {
+                width: 450px;
+                margin-left: 40px;
+                .logo {
+                    font-size: 24px;
+                    margin-right: 30px;
+                }
+                .content {
+                    .heading {
+                        font-size: 24px;
+                        span {
+                            margin-top: 20px;
+                            font-size: 18px;
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Main-Content {
+    .about_us {
+        width: 100%;
+        background-color: #f8f9fa;
+        flex-wrap: wrap;
+        .container {
+            .main-about {
+                flex-wrap: wrap;
+                
+                .content {
+
+                    &:not(:first-child) {
+                        margin-top: 30px;
+                    }
+
+                    margin: 0 20px;
+                    color: $font-color;
+                    font-size: 17px;
+                    width: 100%;
+                    span {
+                        line-height: 30px;
+                    }
+                    
+                    @include breakpoint (tablet) {
+
+                        margin: 0;
+
+                    }
+
+                    @include breakpoint (laptop) {
+                        
+                        max-width: 32%;
+                        margin: 0 20px;
+
+                    }
+                }
+
+                @include breakpoint(laptop) {
+
+                    margin: 0 -20px;
+                    flex-wrap: nowrap;
+
+                }
+            }
+        }
+    }
+    
+    .sevice {
+        background-color: #f8f9fa;
+        .container {
+    
+            .items {
+                display: block;
+                
+                @include breakpoint (tablet) {
+                        
+                    display: flex;
+
+                }
+                .item {
+                    @include breakpoint (mobile) {
+                        
+                        flex-direction: column;
+                        .logo {
+                            margin-bottom: 30px;
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 20px;
+                        }
+                        
+                    }
+
+                    @include breakpoint (tablet) {
+                        
+                        flex-direction: row;
+                        max-width: 48%;
+                        margin: 0px;
+                        
+                        &:not(:last-child) {
+                            margin-bottom: 0px;
+                        }
+
+                    }
+
+                    
+
+                    width: 100%;
+                    background: $white-color;
+                    box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: 0.01);
+                    border-radius: 15px;
+                    padding: 40px;
+                    transition: all .2s;
+                    
+
+                    .logo {
+                        margin-right: 20px;
+                        .struct {
+                            width: 65px;
+                            height: 65px;
+                            background: $second-color;
+                            border-radius: 50%;
+                            position: relative;
+                            i {
+                                position: absolute;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                                font-size: 22px;
+                                color: $white-color;
+                            }
+                        }
+                    }
+
+                    .description {
+                        .heading {
+                            font-size: 24px;
+                            color: $heding-color;
+                        }
+                        .content {
+                            margin: 20px 0;
+                            color: $font-color;
+                            font-size: 17px;
+                            line-height: 27px;
+                        }
+    
+                        .btn {
+                            display: inline-block;
+                            font-size: 18px;
+                            padding: 15px 25px;
+
+                            i {
+                                font-size: 14px;
+                                margin-left: 5px;
+                            }
+                            
+                            @include breakpoint (laptop) {
+                                
+                                display: inline-flex;
+                                
+                            }
+                        }
+                    }
+    
+                    &:first-child {
+                        margin-right: 30px;
+                    }
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        background-color: $primary-dark;
+                        .description {
+
+                            .heading {
+                                color: $white-color;
+                            }
+
+                            .content {
+                                color: $white-color;
+                            }
+                        }
+                    }       
+                }
+            }
+        }
+    }
+    
+    .education {
+        padding: 100px 0;
+        position: relative;
+        background-image: url(../img/bt1/banner2.jpg);
+        background-size: cover;
+        background-clip: border-box;
+        z-index: 1;
+        .container {
+            .main-education {
+                max-width: 60%;
+                margin: 0 auto;
+                text-align: center;
+                z-index: 5;
+                
+                @include breakpoint (mobile) {
+                    max-width: 100%;
+                }
+
+                @include breakpoint (laptop) {
+
+                    max-width: 700px;
+                    
+                }
+                
+                .heading {
+
+                    color: $white-color;
+                    
+                }
+
+                .button-group {
+                    margin: 40px 0;
+                    justify-content: center;
+                    a {
+                        font-size: 18px;
+                        font-weight: bold;
+                        &:last-child {
+                            transition: all .4s;
+                            margin-left: 10px;
+                            color: $primary-color;
+                            &:hover {
+                                color: $black-color;
+                            }
+                        }
+
+                        @include breakpoint (mobile) {
+
+                            padding: 15px 20px;
+                                    
+                        }
+    
+                        @include breakpoint (smallscreen) {
+                            
+                            padding: 15px 30px;
+
+                        }
+                    }
+                }
+            }
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: rgba(#000,0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+    }
+    
+    .somethingGood {
+        position: relative;
+        z-index: 10;
+        height: 350px;
+        @include breakpoint (tablet) {
+            height: 400px;
+        }
+        @include breakpoint (laptop) {
+            height: auto;
+        }
+        .container {
+            .list-items {
+                transform: translateY(-24%);
+                z-index: 6;
+                @include breakpoint (mobile) {
+
+                    flex-wrap: wrap;
+                    margin: 0 -5px;
+
+                }
+
+                @include breakpoint (smallscreen) {
+                    
+                    margin: 0 -10px;
+                }
+
+                @include breakpoint (tablet) {
+                    margin-top: 30px;
+                }
+
+                @include breakpoint (laptop) {
+                    margin-top: 0;
+                    flex-wrap: nowrap;
+                }
+
+                .item {
+                    background: $white-color;
+                    transition: all .2s;
+                    text-align: center;
+                    flex-direction: column;
+                    box-shadow: 1px 1px 5px 0px rgba($color: #000000, $alpha: 0.1);
+                    border-radius: 20px;
+                    z-index: 4;
+                    position: relative;
+
+                    @include breakpoint (mobile) {
+
+                        width: 46%;
+                        margin: 0px 5px 20px 5px;
+                        padding: 20px;
+
+                    }
+
+                    @include breakpoint (tablet) {
+
+                        padding: 40px 20px;
+
+                    }
+
+                    @include breakpoint (laptop) {
+
+                        width: 23%;
+                        margin: 0 10px;
+
+                    }
+                    
+                    .logo {
+                        width: 65px;
+                        height: 65px;
+                        border-radius: 50%;
+                        background-color: $second-color;
+                        position: relative;
+
+                        i {
+                            font-size: 26px;
+                            position: absolute;
+                            color: $white-color;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+    
+                    .amount {
+                        margin-top: 20px;
+                        margin-bottom: 5px;
+                        font-weight: bold;
+                        @include breakpoint (mobile) {
+                            
+                            font-size: 35px;
+                            
+                        }
+    
+                        @include breakpoint (tablet) {
+                            
+                            font-size: 40px;
+                            
+                        }
+                        
+                        @include breakpoint (laptop) {
+                            
+                            font-size: 42px;
+
+                        }
+                    }
+
+                    .description {
+                        color: $heding-color;
+                        
+                        @include breakpoint (mobile) {
+                            
+                            font-size: 16px;
+                            
+                        }
+                        
+                        @include breakpoint (laptop) {
+    
+                            font-size: 18px;
+                            
+                        }
+                    }
+                    
+                    &:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 1px 1px 5px 0px rgba($color: #000000, $alpha: 0.4);
+                        cursor: pointer;
+                    }
+                }
+            }
+    
+            
+            padding-bottom: 100px;
+        }
+    }
+    
+    .main-vid {
+        @include breakpoint(mobile) {
+            padding-bottom: 50px;
+        }
+        
+        @include breakpoint(tablet) {
+            padding-bottom: 100px;   
+        }
+        .container {
+            .main-video {
+                width: 100%;
+                height: 500px;
+                background: url('../img/bt1/banner1.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: border-box;
+                border-radius: 15px;
+                position: relative;
+                overflow: hidden;
+                margin-top: 30px;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(16,15,19, .66);
+                }
+            }
+        }
+    }
+
+    .blog {
+        background-color: $bg-lightgrey;
+        .container {
+            .heading {
+
+                @include breakpoint (mobile) {
+
+                    margin-bottom: 20px;
+
+                }
+                @include breakpoint (smallscreen ) {
+
+                    margin-bottom: 50px;
+                   
+                }
+            }
+
+            .cards {
+                align-items: flex-start;
+                margin-top: 50px;
+                flex-wrap: wrap;
+
+                @include breakpoint (mobile) {
+                    margin: 0;
+                }
+
+                @include breakpoint (tablet) {
+                    margin: 0 -10px;
+                }
+                .card {
+                    background-color: $white-color;
+                    max-width: 31%;
+                    border-radius: 6px;
+                    overflow: hidden;
+                    box-shadow: 1px 1px 5px rgba(1,1,1,0.15);
+                    transition: all .2s;
+
+                    @include breakpoint(mobile) {
+
+                        max-width: 100%;
+                        margin: 0;
+                        margin-top: 30px;
+
+                    }
+
+                    @include breakpoint(tablet) {
+                        max-width: 47%;
+                        margin: 0 10px;
+                    }
+
+                    @include breakpoint (laptop) {
+
+                        max-width: 31%;
+                        margin-bottom:20px;
+                    }
+
+                    .img {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    
+                    .description-card {
+                        padding: 25px;
+                        .card-header {
+                            margin: 20px 0;
+                            font-size: 1.35rem;
+                            line-height: 1.33;
+                            font-weight: 700;
+                            display: inline-block;
+                            transition: all .2s;
+                            &:hover {
+                                color: $primary-color;
+                            }
+                        }
+                        .contact {
+                            .img {
+                                margin-right: 20px;
+                            }
+                            .right {
+                                p {
+                                    font-size: 18px;
+                                    color:$black-color;
+                                }
+                                .time {
+                                    color: $font-color;
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 1px 3px 5px rgba(1,1,1,0.1);
+    
+                    }
+                }
+            }
+
+            .amount {
+                margin-top: 40px;
+            
+                a {
+                    display: inline-block;
+                    text-align: center;
+                    padding: 10px 18px;
+                    border: 1px solid $border-color-light;
+                    border-radius: 50px;
+                    font-weight: 700;
+                    transition: all .2s;
+                    margin-right: 10px;
+                    &.active {
+                        background-color: $primary-color;
+                        color: $white-color;
+                        border-color: $border-color-light;
+                        &:hover {
+                            background-color: $primary-color;
+                            color: $white-color;
+                        }
+                    }
+                    &:hover {
+                        border-color: $primary-color;
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+    
+    .subcribe {
+        .container {
+            .form-validator {
+                margin-top: 50px;
+                margin-bottom: 40px;
+
+                @include breakpoint (mobile) {
+                        
+                    flex-wrap: wrap;
+                    
+                }
+
+                @include breakpoint (smallscreen) {
+                        
+                    flex-wrap: nowrap;
+                    
+                }
+
+                input {
+                    background: #f5f5f5;
+                    padding: 20px;
+                    border-radius: 6px;
+
+                    &:focus {
+                        border: 1px solid $primary-color;
+                        
+                    }
+
+                    @include breakpoint (mobile) {
+                        
+                        margin-bottom: 20px;
+                        margin-right: 0;
+                        width: 100%;
+                        font-size: 16px;
+                        
+                    }
+
+                    @include breakpoint (smallscreen) {
+                        
+                        margin-right: 10px;
+                        flex-grow: 1;
+                        width: 33.33%;
+                        margin-bottom: 0;
+                        font-size: 16px;
+
+                    }
+
+                    @include breakpoint (tablet) {
+
+                        max-width: 240px;
+
+                    }
+                }
+
+                .btn {
+                    
+                    &:hover {
+                        background: $second-color;
+                    }
+
+                    @include breakpoint (mobile) {
+                        
+                        text-align: center;
+                        display: block;
+                        width: 100%;
+                    }
+                    
+                    @include breakpoint (smallscreen) {
+
+                        padding: 15px 40px;
+                        width: auto;
+
+                    }
+
+                    @include breakpoint (tablet) {
+
+                        padding: 15px 80px;
+                        width: auto;
+
+                    }
+
+                    background: $primary-color;
+                    padding: 15px 40px;
+                    font-size: 18px;
+                    color: $white-color;
+                    transition: all .4s;
+                }
+            }
+        }
+    }
+    
+    .evaluate {
+        background: #f5f5f5;
+        .owl-carousel {
+            margin-top: 50px;
+            .item {
+                width: 100%;
+                .main-item {
+                    background: $white-color;
+                    border-radius: 15px;
+                    .content-item {
+                        padding: 50px;
+                        line-height: 30px;
+                        color: $font-color;
+                    }
+                }
+                .person {
+                    margin: 30px 0 0 15px;  
+                    .img {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        margin-right: 15px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .content {
+                        span {
+                            font-size: 20px;
+    
+                        }
+                    }
+                }
+            }
+    
+            .owl-dots {
+                margin-top: 40px !important;
+                .owl-dot {
+                    &.active {
+                        span {
+                            background-color: $primary-color;
+                        }
+                    }
+                    span {
+                        padding: 6px;
+                        background-color: $black-color;
+                        &:hover {
+                            background: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+}
+

@@ -1,0 +1,46 @@
+extends template-part/layout.pug
+
+block head 
+    title blog 
+
+block nav 
+    li
+        a(href='index.html') Home
+
+    li
+        a(href='about.html') About
+
+    li
+        a.page-active.active
+            | Pages 
+            i.fas.fa-angle-down
+        
+        ul.second-nav
+            li
+                a(href='blog.html') Blog Posts
+            li
+                a(href='404Page.html') 404 Pages
+            li
+                a(href='#') Landing page
+    li
+        a(href='contact.html') Contact
+
+block content
+    .Main-Content
+        nav.banner(style='background-image: url(./img/bt1/banner3.jpg);')
+            .container
+                .banner-content
+                    a.active(href='index.html') Home
+                    span &raquo;
+                    |  Blog Page
+        .blog.p-100
+            .container
+                .heading
+                    p Latest Posts
+                    h2 Our Blog Posts
+                #add-card.cards.d-flex
+                .amount#amountPage
+
+
+block script 
+    script(src = "./js/blog.js")

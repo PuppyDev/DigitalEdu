@@ -1,0 +1,430 @@
+
+@import 'breakpoint';
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    transition: all 0.2s ease 0s;
+    @include breakpoint (mobile) {
+
+        overflow: hidden;
+        
+    }
+
+    @include breakpoint (laptop) {
+
+        overflow: visible;
+        background: transparent;
+
+    }
+
+    &.bg-header {
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(#000,0.2);
+        .container {
+            
+            .main-header {
+
+                @include breakpoint (mobile) {
+
+                }
+
+                @include breakpoint (laptop) {
+                    
+                    height: 84px !important;
+
+                }
+
+                .logo {
+                    color: $heding-color;
+                    .hat {
+                        border-color: $primary-color;
+                    }
+                }
+                .right {
+                    
+                    .header-nav {
+
+                        ul {
+
+                            li {
+
+                                a {
+
+                                    color: $black-color;
+                                    font-weight: bolder;
+
+                                    &.active {
+                                        color: $primary-color;
+                                        font-weight: bolder;
+                                    }
+                                    
+                                }
+                                &:hover {
+                                    > a {
+                                        color: $primary-color;
+                                        font-weight: bold;
+                                    }
+                                }
+
+                                .second-nav {
+                                    li {
+                                        a {
+                                            font-weight: bold;
+                                            color: $black-color;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .tool  {
+                    .dark-mode {
+                        i {
+                            color: $black-color;
+    
+                        }
+                    }
+                }
+            }            
+        }
+    }
+
+    .container {
+        padding: 10px 0px;
+        position: relative;
+        .main-header {
+            transition: all .4s;
+            
+            @include breakpoint(mobile) {
+                flex-direction: column;
+                height: 70px;
+                overflow: hidden;
+            }
+            
+            @include breakpoint (laptop) {
+                flex-direction: row;
+                height: 78px !important;
+                overflow: visible;
+            }
+
+            .logo {
+                @include breakpoint(mobile) {
+                    margin-top: 20px;
+                }
+                @include breakpoint(desktop) {
+                    margin-top: 0;
+                    margin-left: 0;
+                }
+                display: inline;
+                color: $heding-color;
+                margin-right: auto;
+                .hat {
+                    border-top: 8px solid $white-color;
+                    width: 40px;
+                    border-radius: 20px 20px 0px 0px;
+                }
+                color: $white-color;
+
+            }
+
+            .right {
+                margin: 0 auto;
+                transition: all .2s;   
+                @include breakpoint (mobile) {
+                    
+                    margin-top: 30px;
+                    height: auto;
+                    flex-direction: column;
+                    width: 100%;
+
+                }
+
+                @include breakpoint(laptop) {
+
+                    overflow: visible;
+                    width: auto;
+                    margin-top: 0;
+                    flex-direction: row;
+
+                }
+
+
+                .search {
+                    background-color: $grey-color;
+                    border-radius: 8px;
+
+                    @include breakpoint(mobile) {
+                        width: 100%;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 10px 20px;
+                        font-size: 18px;
+                        color: #666666;
+                        flex-grow: 1;
+                            
+                        &::placeholder {
+                            font-size: 18px;
+                        }
+                    }
+                    i {
+                        font-size: 14px;
+                        color:#404040;
+                        padding:  0 20px;
+                    }
+                }
+
+                nav.header-nav {
+
+                    @include breakpoint(mobile) {
+                        width: 100%;
+                    }
+                    @include breakpoint(laptop) {
+                        width: auto;
+                    }
+
+                    ul {
+                        flex-direction: column;
+                        width: 100%;
+                        @include breakpoint(laptop) {
+                            flex-direction: row;
+                        }
+
+                        li {
+                            position: relative;
+                            a {
+                                padding:10px; 
+                                font-size: 18px;
+                                color: $white-color;
+                                font-weight: 300;  
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+
+                                i {
+                                    margin-left: 5px;
+                                    font-size: 12px;
+                                }
+
+                                &.active {
+                                    color: $primary-color;
+                                    font-weight: bold;
+                                }
+                                &:hover {
+                                    color: $primary-color;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            .second-nav {
+                                transition: all .6s;
+                                display: none;
+                                @include breakpoint (mobile) {
+                                    padding-left: 40px;
+                                    li {
+                                        a {
+                                            color: $white-color ;
+                                        }
+                                    }
+                                }
+
+                                @include breakpoint (laptop) {
+
+                                    box-shadow: 0px 0px 2px rgba(#000,0.7);
+                                    border-radius: 5px;
+                                    background-color: $white-color;
+                                    position: absolute;
+                                    padding: 15px;
+                                    bottom: 100;
+                                    z-index: 6;
+                                    width: auto;
+    
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        width: 14px;
+                                        height: 14px;
+                                        top: -5px;
+                                        left: 30px;
+                                        background-color: $white-color;
+                                        transform: rotate(45deg);
+                                        z-index: 5;
+                                        border: 1px solid rgba(0, 0, 0, 0.3);
+                                        border-right: none;
+                                        border-bottom: none;
+                                    }
+                                }
+
+                                li {
+                                    min-width: 150px;
+                                    a {
+                                        padding: 5px 0;
+                                        display: block;
+                                        font-weight: bold;
+
+                                        @include breakpoint (laptop) {
+                                            color: $black-color;
+                                        }
+                                    }
+                                
+                                    &:hover {
+                                        a {
+                                            color: $primary-color;
+                                            font-weight: bold;
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .tool {
+                margin-right: 20px;
+                position: absolute;
+                top: 20px;
+                right: 0;
+                @include breakpoint(laptop) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .dark-mode {
+                    margin-left: 40px;
+                    i {
+                        color: $white-color;
+                        cursor: pointer;
+                        font-size: 20px;
+                    }
+                }
+                .nav-bar {
+                    margin-left: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $primary-color;
+                    padding:7px 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    // width: 35px;
+                    @include breakpoint (laptop) {
+                        display: none;
+                    }
+    
+                    i {
+                        color: $white-color;
+                        cursor: pointer;
+                        font-size: 20px;
+                    }
+            }
+            }
+        }
+    }
+
+    
+}
+
+.banner {
+    background-image: url('../img/bt1/banner3.jpg');
+}
+
+footer {
+    background-color: $footer-color;
+    color: $white-color;
+    .container {
+        .items {
+            flex-wrap: wrap;
+            margin: 0 -10px;
+            @include breakpoint (laptop) { 
+                flex-wrap: nowrap;
+            }
+            .item {
+
+                @include breakpoint (mobile) {
+                    margin-top: 40px;
+
+                    &.small {
+                        width: 48%;
+                    }
+                }
+
+                @include breakpoint (smallscreen) {
+                    width: 46%;
+                    margin: 20px 10px;
+
+                    &.small {
+                        width: 46%;
+                    }
+                    
+                }
+
+                @include breakpoint (laptop) {
+
+                    &.medium {
+                        max-width: 33%;
+                    }
+
+                    &.small {
+                        max-width: 16.6665%;
+                    }
+                }
+
+                .heading {
+                    font-size: 22px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+
+                }
+
+                &:first-child {
+                    .heading {
+                        font-size: 30px;
+                    }
+                    .content {
+                        line-height: 28px;
+                        padding-right: 20px;
+                    }
+                }
+
+                // &:not(:last-child ) {
+                //     margin-right: 20px;
+                // }
+
+                .content {
+                    color: #63676b;
+                    font-size: 17px;
+                    ul {
+                        li {
+                            a {
+                                cursor: pointer;
+                                color: #63676b;
+                                display: inline-block;
+                                margin-top: 20px;
+                                &:hover {
+                                    color: $primary-color;
+                                }
+                            }
+                        }
+                    }
+                }
+                .list-icon {
+                    i {
+                        padding: 10px;
+                        background: $white-color;
+                        border-radius: 50%;
+                        color: $primary-color;
+                        margin-right: 10px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

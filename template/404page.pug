@@ -1,0 +1,54 @@
+extends template-part/layout
+
+block head 
+    title 404 - Page
+
+block style 
+    link(rel="stylesheet", href="./scss/style.css")
+    link(rel="stylesheet", href="./scss/404page.css")
+
+block nav 
+    li
+        a(href='index.html') Home
+
+    li
+        a(href='about.html') About
+
+    li
+        a.page-active.active
+            | Pages 
+            i.fas.fa-angle-down
+        
+        ul.second-nav
+            li
+                a(href='blog.html') Blog Posts
+            li
+                a(href='404Page.html') 404 Pages
+            li
+                a(href='#') Landing page
+    li
+        a(href='contact.html') Contact
+
+block content 
+    .main-content 
+        .banner 
+            .container 
+                .banner-content 
+                    a(href="index.html") 
+                        | Home
+                    span »
+                    |404page 
+
+        .contents.p-100 
+            .container 
+                .img 
+                    img(src="./img/bt1/404.png", alt="error")
+            
+                .description.d-flex.a-center 
+                    h2.title-content 
+                        | Sorry We Can't Find That Page
+                    .content 
+                        | The page you are looking for was moved, removed, renamed or never existed..
+                    a(href="index.html").btn.btn-basic 
+                        | Back to Home
+                        i.fas.fa-chevron-right 

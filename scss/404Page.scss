@@ -1,0 +1,46 @@
+@import 'color';
+@import 'layout';
+@import 'general';
+
+.main-content {
+    
+    .contents {
+        .container {
+            text-align: center;
+            .img {
+                max-width: 600px;
+                margin: auto;
+                img {
+                    width: 100%;
+                }
+            }
+            .description {
+                flex-direction: column;
+                .title-content {
+                    font-size: 28px;
+                }
+                .content {
+                    margin: 20px 0;
+                    font-size: 18px;
+                    color: $font-color;
+                }
+
+                .btn {
+                    margin-top: 20px;
+                    background-color: $primary-color;
+                    color: $white-color;
+                    font-size: 18px;
+                    transition: all .4s;
+                    &:hover {
+                        background-color: $second-color;
+                    }
+                    i {
+                        margin-left: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+}

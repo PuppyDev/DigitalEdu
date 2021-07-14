@@ -1,0 +1,301 @@
+@import 'color';
+@import 'layout';
+@import 'general';
+
+.main-content {
+    .banner {
+        .container {
+            .banner-content {
+                position: absolute;
+                top: 60%;
+                z-index: 3;
+                font-size: 18px;
+                a {
+                    transition: all .4s;
+                    color: $primary-color;
+                    &:hover {
+                        color: green;
+                    }
+                }
+                span {
+                    margin: 0 5px;
+                }
+            }
+        }
+
+    }
+
+    .top {
+        
+        .about-Us {
+            .container {
+
+                align-items: flex-start;
+                .d-flex {
+
+                    @include breakpoint (mobile) {
+                        flex-direction: column;
+                        margin: 0px;
+                    }
+                    
+                    @include breakpoint (laptop) {
+                        margin: 0 -25px;
+                        flex-direction: row;
+                    }
+
+                    .img {
+                        margin: 0 25px;
+                        overflow: hidden;
+                        img {
+                            border-radius: 15px;
+                            width: 100%;
+                        }
+                        
+                        @include breakpoint (laptop) {
+                            width: 50%;
+                        }
+                    }
+        
+                    .contents {
+                        margin: 0 25px;
+                        
+                        @include breakpoint (mobile) {
+                            margin-top: 30px;
+                        }
+                        
+                        @include breakpoint (laptop) {
+                            width: 50%;
+                            margin-top: 0;
+                        }
+
+                        .heading {
+                            h2 {
+                                font-weight: bold;
+                            }
+                        }
+        
+                        .content {
+                            margin-top: 20px;
+                            line-height: 32px;
+                            font-size: 17px;
+                            color: $black-color;
+                        }
+                        .btn {
+                            display: inline-block;
+                            margin-top: 30px;
+                            background-color: $primary-color;
+                            color: white;
+                            font-weight: bold;
+                            transition: all .4s;
+                            &:hover {
+                                background-color: #3d348b;
+                                border-color: #3d348b;
+                            }
+                            i {
+                                margin-left: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .resons {
+            background-color: $bg-lightgrey;
+        }
+    
+        .ourSkill {
+            .container {
+    
+                .contents {
+
+                    p.description {
+                        color: $font-color;
+                        font-size: 17px;
+                        line-height: 28px;
+                        font-weight: 400;
+                        margin-top: 30px;
+                    }
+    
+                    .skills-bar {
+
+                        margin-top: 40px;
+
+                        .skill {
+
+                            .progress-info {
+
+                                margin-top:30px;
+                                margin-bottom: 10px;
+
+                            }
+                            .progress {
+
+                                width: 100%;
+                                height: 8px;
+                                background-color: $bg-lightgrey;
+                                border-radius: 10px;
+                                position: relative;
+                                overflow: hidden;
+                                span {
+                                    transition: all 1s;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 0px;
+                                    content : "";
+                                    background-color: rgb(71, 71, 248);
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .banner-2 {
+        background: url('../img/bt1/banner4.jpg');
+        min-height: 250px;
+        background-position: center;
+        background-size: cover;
+        padding: 20px 0;
+        .container {
+            position: relative;
+            height: 250px;
+            .content {
+                position: absolute;
+                top: 50%;
+                z-index: 3;
+                transform: translateY(-50%);
+
+                @include breakpoint (mobile) {
+
+                    flex-wrap: wrap;
+                }
+
+                @include breakpoint (laptop) {
+                    width: 100%;
+                    flex-wrap: nowrap;
+                }
+                
+                h2 {
+                    font-size: 40px;
+                }
+
+                a.btn { 
+                    @include breakpoint (mobile) {
+
+                        margin-top: 30px;
+                    }
+    
+                    @include breakpoint (laptop) {
+
+                        margin-top: 0px;
+                        
+                    }
+                    
+                    color: $primary-color;
+                    background-color: $white-color;
+                    font-size: 18px;
+                    transition: all .4s;
+                    i {
+                        margin-left: 10px;
+                        font-size: 14px;
+
+                    }
+                    &:hover {
+                        color: $black-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .ourTeam {
+        .container {
+            .members {
+                flex-wrap: wrap;
+                
+                @include breakpoint (laptop) {
+                    
+                    margin-top: 40px;
+                    
+                }
+
+                .member {
+                    margin-top: 40px;
+                    flex-direction: column;
+                    @include breakpoint (mobile) {
+                        width: 48%;
+                    }
+                    @include breakpoint (laptop) {
+                        
+                        width: 23%;
+                    }
+                    .img {
+                        position: relative;
+                        overflow: hidden;
+                        transition: all .4s;
+                        &:hover {
+                            .contact {
+                                opacity: 1;
+                            }
+                        }
+                        img {
+                            border-radius: 50%;
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        .contact {
+                            transition: all .4s;
+
+                            position: absolute;
+                            top: 80%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            opacity: 0;
+                            a {
+                                margin: 0 5px;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                background-color: $white-color;
+                                color: $primary-color;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                transition: all .4s;
+                                &:hover {
+                                    background-color: $primary-color;
+                                    color: $white-color;
+                                }
+                            }
+                        }
+                    }
+                    .name {
+                        margin: 25px 0 0px;
+                        font-size: 24px;
+                        color: $heding-color;
+                        font-weight: 600;
+                        transition: all .4s;
+                    }
+
+                    .role {
+                        color: $font-color;
+                    }
+
+                    &:hover {
+                        .name {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
